@@ -4,4 +4,8 @@ use ExtUtils::MakeMaker;
 WriteMakefile(
     'NAME'	=> 'Crypt::xDBM_File',
     'VERSION_FROM' => 'xDBM_File.pm', # finds $VERSION
+    'PREREQ_PM'  => {
+	'Crypt::Blowfish'	=> '0', # or a minimum workable version
+    }
+
 );
