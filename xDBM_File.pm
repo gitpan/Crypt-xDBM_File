@@ -3,7 +3,7 @@ package Crypt::xDBM_File;
 use strict;
 use vars qw($VERSION);
 
-$VERSION = '0.80';
+$VERSION = '1.00';
 
 # Preloaded methods go here.
 
@@ -87,7 +87,7 @@ sub STORE { # get an encrypted item and decrypt it
 
 sub DELETE { # delete an item
     my ($self, $key) = @_;
-    my $crypted_key = $self->_encrypt_string($self, $key, $self->{'block_pad'});
+    my $crypted_key = $self->_encrypt_string($key, $self->{'block_pad'});
 
     return (delete $self->{'localhash'}{$crypted_key});
 }
