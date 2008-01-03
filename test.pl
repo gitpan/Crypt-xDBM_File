@@ -28,6 +28,9 @@ tie %hash, 'Crypt::xDBM_File', 'Crypt::Blowfish', '01234567', 'SDBM_File', "/tmp
 $hash{'bob'} = "bob rules!";
 $hash{'of'} = "yes";
 $hash{'cult'} = "bob totally rules :)";
+if (exists($hash{'of'})) {
+	print "$hash{'of'} existed\n";
+}
 delete $hash{'of'};
 
 print "key bob = $hash{'bob'}\n";

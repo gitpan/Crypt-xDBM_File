@@ -3,7 +3,7 @@ package Crypt::xDBM_File;
 use strict;
 use vars qw($VERSION);
 
-$VERSION = '1.01';
+$VERSION = '1.02';
 
 # Preloaded methods go here.
 
@@ -94,7 +94,7 @@ sub DELETE { # delete an item
 
 sub EXISTS { # does it exist
     my ($self, $key) = @_;
-    my $crypted_key = $self->{'cipher'}->encrypt($key);
+    my $crypted_key = $self->_encrypt_string($key, $self->{'block_pad'});
 
     return (exists $self->{'localhash'}{$crypted_key});
 }

@@ -11,3 +11,9 @@ Revision history for Perl extension Crypt::xDBM_File.
 	- tested with GDBM_File
 	- tested with NDBM_File
 	- tested with SDBM_File
+
+- some history missing
+
+1.02  Thu Jan 03 08:42:20 2008
+    - fixed EXISTS bug, thanks to Cristoph Karich
+      for pointing it out and providing the fix
